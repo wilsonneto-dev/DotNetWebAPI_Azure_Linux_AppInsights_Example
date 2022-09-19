@@ -27,6 +27,7 @@ namespace WebAPITest.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             _logger.LogInformation("Get() called {@Method}", new { Method = "Get" });
+            _logger.LogInformation("event:Get() called {@Method}", new { Method = "Get" });
             var rng = new Random();
             var r = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
