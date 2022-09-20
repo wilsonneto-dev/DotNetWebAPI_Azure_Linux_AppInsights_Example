@@ -47,6 +47,7 @@ namespace WebAPITest
             {
                 if (logEvent.MessageTemplate.Text.StartsWith("event:"))
                 {
+                    logEvent.MessageTemplate.Text.Replace("event:", "")
                     EventTelemetry telemetryProperties = new EventTelemetry(logEvent.MessageTemplate.Text)
                     {
                         Timestamp = logEvent.Timestamp
